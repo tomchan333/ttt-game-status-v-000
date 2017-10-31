@@ -54,3 +54,23 @@ def over?(board)
     return false
   end
 end
+
+def winner(board)
+  WIN_COMBINATIONS.detect do |array|
+      win_index_1 = array[0]
+      win_index_2 = array[1]
+      win_index_3 = array[2]
+      position_1 = board[win_index_1] # load the value of the board at win_index_1
+      position_2 = board[win_index_2] # load the value of the board at win_index_2
+      position_3 = board[win_index_3] # load the value of the board at win_index_3
+
+      if position_1 == "X" && position_2 == "X" && position_3 == "X"
+        return "X"# return the win_combination indexes that won.
+      elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
+        return "O"
+      else
+        return nil 
+      end
+  end
+
+end
