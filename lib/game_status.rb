@@ -40,13 +40,9 @@ def full?(board)
 end
 
 def draw?(board)
-  input = won?(board)
-  input1 = full?(board)
-  if input1 == true && input == true
-    return false
-  elsif input1 == false && input == false
-    return false
-  elsif input1 == true && input == false
+  if won?(board) && full(board)
     return true
+  else
+    return false
   end
 end
