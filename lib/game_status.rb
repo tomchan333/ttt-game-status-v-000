@@ -46,5 +46,7 @@ def draw?(board)
     return false
   elsif input1 == false
     return false
+  elsif input1 == true && input == false
+    return true
   end
 end
